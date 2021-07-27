@@ -2,13 +2,16 @@ import SwiftUI
 
 struct DetailView: View {
     let scrum: DailyScrum
+    @State private var isPresented = false
     var body: some View {
         List {
             Section (header: Text("Meeting info")) {
-                Label("Start meeting", systemImage: "timer")
-                    .accessibilityLabel(Text("Start meeting"))
-                    .font(.headline)
-                    .foregroundColor(.accentColor)
+                NavigationLink (destination: MeetingView()) {
+                    Label("Start meeting", systemImage: "timer")
+                        .accessibilityLabel(Text("Start meeting"))
+                        .font(.headline)
+                        .foregroundColor(.accentColor)
+                }
                 HStack {
                     Label("Length", systemImage: "clock")
                         .accessibilityLabel(Text("Meeting Length"))
@@ -23,8 +26,30 @@ struct DetailView: View {
                 }
                 .accessibilityElement(children: .ignore)
             }
+            Section (header: Text("Attendees")) {
+                ForEach (scrum.attendees, id: \.self) { attendee in
+                    Label (attendee, systemImage: "person")
+                        .accessibilityLabel(Text("Person"))
+                        .accessibilityValue(Text(attendee))
+                }
+            }
         }
         .listStyle(InsetGroupedListStyle())
+        .navigationBarItems(trailing: Button("Edit") {
+            isPresented = true
+        })
+        .navigationTitle(scrum.title)
+        .fullScreenCover(isPresented: $isPresented) {
+            NavigationView {
+                EditView()
+                    .navigationTitle(scrum.title)
+                    .navigationBarItems(leading: Button("Cancel") {
+                        isPresented = false
+                    }, trailing: Button("Done") {
+                        isPresented = false
+                    })
+            }
+        }
     }
 }
 
