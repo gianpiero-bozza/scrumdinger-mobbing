@@ -24,16 +24,22 @@ extension DailyScrum {
             DailyScrum(title: "Retro", attendees: ["GiBo", "MaKl", "OnKo", "JiLe", "MaBe", "NaQu"], lengthInMinutes: 60, color: Color.blue)
         ]
     }
-}
 
-extension DailyScrum {
     struct Data {
         var title: String = ""
         var attendees: [String] = []
         var lengthInMinutes: Double = 5.0
         var color: Color = Color.purple
     }
+    
     var data: Data {
         return Data (title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), color: color)
+    }
+    
+    mutating func update(from data: Data) {
+        title = data.title
+        attendees = data.attendees
+        lengthInMinutes = Int(data.lengthInMinutes)
+        color = data.color
     }
 }
