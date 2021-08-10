@@ -23,6 +23,28 @@ class ScrumData: ObservableObject {
                 #endif
                 return
             }
+            guard let dailyScrums = try? JSONDecoder().decode([DailyScrum].self, from: data) else {
+                fatalError("cannot decode scrum data")
+            }
+            DispatchQueue.main.async {
+                self?.scrums = dailyScrums
+            }
+        }
+    }
+    func save() {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let scrums = self?.scrums else {
+                fatalError("self out of scope")
+            }
+            guard let data = try? JSONEncoder().encode(scrums) else {
+                fatalError("error encoding data")
+            }
+            do {
+                let outfile = Self.fileURL
+                try data.write(to: outfile)
+            } catch {
+                fatalError("cannot write a file")
+            }
         }
     }
 }
