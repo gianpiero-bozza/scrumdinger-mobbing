@@ -12,6 +12,7 @@
 		341F8F4CF615C2C095C67286 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 341F8173F82F608AE64BF016 /* ding.wav */; };
 		341F8FCA065C06DB911CDE95 /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341F8FF51F8EB6D218F5305F /* AVPlayer+Ding.swift */; };
 		794CC8A726A99D9C002C32D5 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794CC8A626A99D9C002C32D5 /* ScrumsView.swift */; };
+		79DB2E3526C5009700A645E4 /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DB2E3426C5009700A645E4 /* MeetingTimerView.swift */; };
 		80272A9F26B29D49007BF643 /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80272A9E26B29D49007BF643 /* MeetingHeaderView.swift */; };
 		E37678A226BBD3ED00E32679 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37678A126BBD3ED00E32679 /* History.swift */; };
 		E37678A426BBD90C00E32679 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37678A326BBD90C00E32679 /* Color+Codable.swift */; };
@@ -33,6 +34,7 @@
 		341F8173F82F608AE64BF016 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ding.wav; path = Resources/ding.wav; sourceTree = "<group>"; };
 		341F8FF51F8EB6D218F5305F /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
 		794CC8A626A99D9C002C32D5 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
+		79DB2E3426C5009700A645E4 /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
 		80272A9E26B29D49007BF643 /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
 		E37678A126BBD3ED00E32679 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		E37678A326BBD90C00E32679 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				E37678A126BBD3ED00E32679 /* History.swift */,
 				E37678A326BBD90C00E32679 /* Color+Codable.swift */,
 				E37678A526BBD95300E32679 /* ScrumData.swift */,
+				79DB2E3426C5009700A645E4 /* MeetingTimerView.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				E3C61F7726A6BD6700ECC176 /* CardView.swift in Sources */,
 				E3ACAB1D26B927E90065C875 /* ScrumTimer.swift in Sources */,
 				E37678A626BBD95300E32679 /* ScrumData.swift in Sources */,
+				79DB2E3526C5009700A645E4 /* MeetingTimerView.swift in Sources */,
 				2656EDEB26AFF9A300E00EA7 /* EditView.swift in Sources */,
 				E3ACAB1F26B92AD60065C875 /* MeetingFooterView.swift in Sources */,
 				794CC8A726A99D9C002C32D5 /* ScrumsView.swift in Sources */,
