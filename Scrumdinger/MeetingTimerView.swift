@@ -40,6 +40,8 @@ struct MeetingTimerView: View {
         })?.name ?? "Someone"
     }
     
+    let isRecording: Bool
+    
     var body: some View {
         ZStack {
             Circle()
@@ -48,6 +50,11 @@ struct MeetingTimerView: View {
                 Text(currentSpeaker)
                     .font(.title)
                 Text("is speaking")
+                
+                Image(systemName: isRecording ? "mic" : "mic.slash")
+                    .font(.title)
+                    .padding(.top)
+                    .accessibilityLabel(isRecording ? "With transcription" : "Without transcription")
             }
             .accessibilityElement(children: .combine)
             .foregroundColor(scrumColor.accessibleFontColor)
@@ -70,6 +77,6 @@ struct MeetingTimerView_Previews: PreviewProvider {
                            ScrumTimer.Speaker(name: "Bill", isCompleted: false)]
     
     static var previews: some View {
-        MeetingTimerView(speakers: speakers, scrumColor: .yellow)
+        MeetingTimerView(speakers: speakers, scrumColor: .yellow, isRecording: true)
     }
 }
