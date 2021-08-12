@@ -14,7 +14,7 @@ struct SpeakerArc: Shape {
     }
     
     private var endAngle: Angle {
-        Angle(degrees: startAngle.degrees * degreesPerSpeaker - 1.0)
+        Angle(degrees: startAngle.degrees + degreesPerSpeaker - 1.0)
     }
     
     func path(in rect: CGRect) -> Path {
@@ -51,6 +51,16 @@ struct MeetingTimerView: View {
             }
             .accessibilityElement(children: .combine)
             .foregroundColor(scrumColor.accessibleFontColor)
+            
+            ForEach(speakers) { speaker in
+                if speaker.isCompleted, let index = speakers.firstIndex(where: {
+                    $0.id == speaker.id
+                }) {
+                    SpeakerArc(speakerIndex: index, totalSpeakers: speakers.count)
+                        .rotation(Angle(degrees: -90.0))
+                        .stroke(scrumColor, lineWidth: 12)
+                }
+            }
         }.padding(.horizontal)
     }
 }
